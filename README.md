@@ -18,11 +18,13 @@ Example
 
 The following table (based on the example used in the paper [1]):
 
+<code>
                   | open_door | close_door       | lock           | unlock           | push_in
 Opened            |           | Closed, Unlocked |                |                  |
 Closed, Unlocked  | Opened    |                  | Closed, Locked |                  | Broken
 Closed, Locked    |           |                  |                | Closed, Unlocked | Broken
 Broken            |           |                  |                |                  |
+</code>
 
 StateTableTools can take that and build an alternative representation which
 GraphViz can turn into something like this:
