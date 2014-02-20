@@ -56,12 +56,16 @@ def output_dot_state( machine ):
                 attrs = " ltail=\"cluster%s\""%(state.name)
             dest = state.transitions[ trans ].name
             # TODO: deal with escaping of the label & node names
-            print "\""+src_name + "\"->\"" + dest + "\" [ dir=forward taillabel=\""+trans+"\"%s];"%(attrs)
+            print "\""+src_name + "\"->\"" + dest + "\" [ dir=forward label=\""+trans+"\"%s];"%(attrs)
             # decorate = true?
+            # taillabel rather than label?
 
 def output_dot( machine ):
     print "digraph G {"
     print "rankdir=LR;"
+# USE THESE FOR DOT?
+#    print "nodesep=1.2"
+# END DOT
 # USE THESE FOR FDP?
 #    print "nodesep=2.0"
 #    print "sep = 0.6;"
@@ -71,9 +75,10 @@ def output_dot( machine ):
 #    print "overlap = vpsc;"
 #    print "splines = curved;"
 #    print "splines = true;"
-    print "compound=false;"
-    output_dot_clusters( machine )
+    # This needs to be turned on to allow tails to be connected to sub-graphs
+    print "compound=true;"
     output_dot_state( machine )
+    output_dot_clusters( machine )
     print "}"
 
 def parse_sem( p_input ):
