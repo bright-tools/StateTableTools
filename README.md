@@ -25,7 +25,7 @@ The following table (based on the example used in the paper [1]):
     Broken            |           |                  |                |                  |
 
 StateTableTools can take that and build an alternative representation which
-GraphViz can turn into something like this:
+[GraphViz](http://www.graphviz.org/) can turn into something like this:
 
 ![Example state chart](https://raw.github.com/bright-tools/StateTableTools/master/test/example_2.png)
 
