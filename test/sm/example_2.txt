@@ -1,0 +1,5 @@
+                  | open_door | close_door       | lock           | unlock           | push_in
+Opened            |           | Closed, Unlocked |                |                  |
+Closed, Unlocked  | Opened    |                  | Closed, Locked |                  | Broken
+Closed, Locked    |           |                  |                | Closed, Unlocked | Broken
+Broken            |           |                  |                |                  |
